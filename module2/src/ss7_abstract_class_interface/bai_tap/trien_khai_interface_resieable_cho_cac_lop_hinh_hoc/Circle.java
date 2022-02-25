@@ -1,6 +1,6 @@
-package ss7_abstract_class_interface.bai_tap.trien_khai_interface_colorable_cho_cac_lop_hinh_hoc;
+package ss7_abstract_class_interface.bai_tap.trien_khai_interface_resieable_cho_cac_lop_hinh_hoc;
 
-public class Circle extends Shape implements Resizeable {
+public class Circle extends Shape implements Colorable {
     private double radius = 1.0;
 
     public Circle() {
@@ -23,6 +23,7 @@ public class Circle extends Shape implements Resizeable {
         this.radius = radius;
     }
 
+    @Override
     public double getArea() {
         return radius * radius * Math.PI;
     }
@@ -39,8 +40,9 @@ public class Circle extends Shape implements Resizeable {
                 + super.toString();
     }
 
+
     @Override
-    public void resize(double percent) {
-        setRadius(getRadius() + (getRadius() * percent / 100));
+    public void howToColor() {
+
     }
 }

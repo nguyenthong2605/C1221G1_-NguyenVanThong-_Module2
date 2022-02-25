@@ -1,6 +1,6 @@
-package ss7_abstract_class_interface.bai_tap.trien_khai_interface_colorable_cho_cac_lop_hinh_hoc;
+package ss7_abstract_class_interface.bai_tap.trien_khai_interface_resieable_cho_cac_lop_hinh_hoc;
 
-public class Shape {
+public abstract class Shape {
     private String color = "green";
 
     private boolean filled = true;
@@ -36,4 +36,6 @@ public class Shape {
                 + " and "
                 + (isFilled() ? "filled" : "not filled");
     }
+
+    public abstract double getArea();
 }

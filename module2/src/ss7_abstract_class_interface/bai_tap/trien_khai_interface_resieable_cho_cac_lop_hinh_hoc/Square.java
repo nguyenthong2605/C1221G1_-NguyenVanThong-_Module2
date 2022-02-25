@@ -1,6 +1,6 @@
-package ss7_abstract_class_interface.bai_tap.trien_khai_interface_colorable_cho_cac_lop_hinh_hoc;
+package ss7_abstract_class_interface.bai_tap.trien_khai_interface_resieable_cho_cac_lop_hinh_hoc;
 
-public class Square extends Rectangle implements Resizeable {
+public class Square extends Rectangle implements Colorable {
     private double side = 1.0;
 
     public Square() {
@@ -33,8 +33,9 @@ public class Square extends Rectangle implements Resizeable {
     }
 
     @Override
-    public void resize(double percent) {
-        setSide(getSide() + getSide() * (percent / 100));
+    public void howToColor() {
+        System.out.println("Color all four sides");
     }
 }
+
 
