@@ -1,4 +1,4 @@
-package oop_review.quan_ly_tai_khoan_ngan_hang;
+package oop_review.oop_java_1.quan_ly_tai_khoan_ngan_hang;
 
 import java.util.Scanner;
 
@@ -83,14 +83,13 @@ public class Account {
     public double daoHan(){
         return this.soTienTrongTaiKhoan = this.soTienTrongTaiKhoan + this.soTienTrongTaiKhoan * laiSuat;
     }
-    public double chuyenTien(Account account ){
+    public void chuyenTien(Account account ){
         double soTienChuyen;
-        System.out.println("Nhập số tiền cần chuyển: ");
-        Scanner input = new Scanner(System.in);
-        soTienChuyen = Double.parseDouble(input.nextLine());
-        System.out.println("Số tài khoản cần chuyển: ");
         Scanner scanner = new Scanner(System.in);
-        this.soTaiKhoan = Long.parseLong(scanner.nextLine());
-        return account.soTienTrongTaiKhoan = account.soTienTrongTaiKhoan + soTienChuyen;
+        System.out.println("Nhập số tiền cần chuyển: ");
+        String input = scanner.nextLine();
+        soTienChuyen = Double.parseDouble(input);
+        account.soTienTrongTaiKhoan = account.soTienTrongTaiKhoan + soTienChuyen;
+        this.soTienTrongTaiKhoan = this.soTienTrongTaiKhoan - soTienChuyen;
     }
 }

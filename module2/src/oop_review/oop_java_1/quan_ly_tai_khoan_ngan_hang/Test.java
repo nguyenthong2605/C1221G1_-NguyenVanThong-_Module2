@@ -1,6 +1,4 @@
-package oop_review.quan_ly_tai_khoan_ngan_hang;
-
-import java.util.Scanner;
+package oop_review.oop_java_1.quan_ly_tai_khoan_ngan_hang;
 
 public class Test {
     public static void main(String[] args) {
@@ -19,5 +17,7 @@ public class Test {
         System.out.println(account1);
         System.out.println("Nguyễn Văn Thông chuyển khoản cho Huỳnh Thị Út Quyên với số tiền: ");
         account1.chuyenTien(account2);
+        System.out.println(account1);
+        System.out.println(account2);
     }
 }

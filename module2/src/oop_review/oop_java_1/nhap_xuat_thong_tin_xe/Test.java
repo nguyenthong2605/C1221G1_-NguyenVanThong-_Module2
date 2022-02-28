@@ -1,4 +1,4 @@
-package oop_review.nhap_xuat_thong_tin_xe;
+package oop_review.oop_java_1.nhap_xuat_thong_tin_xe;
 
 import java.util.Scanner;
 
