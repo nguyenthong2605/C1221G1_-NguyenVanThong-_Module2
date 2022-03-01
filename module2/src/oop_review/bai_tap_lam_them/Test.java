@@ -6,7 +6,9 @@ import java.util.Scanner;
 
 public class Test {
     public static void main(String[] args) {
-        ArrayList<PhuongTienGiaoThong> list = new ArrayList<>();
+        ArrayList<XeTai> listXeTai = new ArrayList<>();
+        ArrayList<OTo> listOTo = new ArrayList<>();
+        ArrayList<XeMay> listXeMay = new ArrayList<>();
         int choice = -1;
         Scanner scanner = new Scanner(System.in);
         while (choice != 0) {
@@ -25,8 +27,8 @@ public class Test {
                     while (choice1 != 0) {
                         System.out.println("Người dùng chọn:");
                         System.out.println("1.Thêm xe tải.");
-                        System.out.println("1.Thêm ôtô.");
-                        System.out.println("1.Thêm xe máy.");
+                        System.out.println("2.Thêm ôtô.");
+                        System.out.println("3.Thêm xe máy.");
                         choice1 = Integer.parseInt(scanner1.nextLine());
                         String bienKiemSoat, hangSanXuat, chuSoHuu, kieuXe;
                         int namSanXuat, soChoNgoi;
@@ -44,7 +46,8 @@ public class Test {
                                 System.out.println("Nhập trọng tải: ");
                                 trongTai = Double.parseDouble(scanner.nextLine());
                                 XeTai xeTai = new XeTai(bienKiemSoat, hangSanXuat, namSanXuat, chuSoHuu, trongTai);
-                                list.add(xeTai);
+                                listXeTai.add(xeTai);
+                                System.out.println(xeTai);
                                 break;
                             case 2:
                                 System.out.println("Nhập biển kiểm soát:");
@@ -60,6 +63,8 @@ public class Test {
                                 System.out.println("Nhập số chỗ ngồi: ");
                                 soChoNgoi = Integer.parseInt(scanner.nextLine());
                                 OTo oTo = new OTo(bienKiemSoat, hangSanXuat, namSanXuat, chuSoHuu, kieuXe, soChoNgoi);
+                                listOTo.add(oTo);
+                                System.out.println(oTo);
                                 break;
                             case 3:
                                 System.out.println("Nhập biển kiểm soát:");
@@ -73,11 +78,93 @@ public class Test {
                                 System.out.println("Nhập công suất: ");
                                 congSuat = Double.parseDouble(scanner.nextLine());
                                 XeMay xeMay = new XeMay(bienKiemSoat, hangSanXuat, namSanXuat, chuSoHuu, congSuat);
+                                listXeMay.add(xeMay);
+                                System.out.println(xeMay);
                                 break;
+                            default:
+                                break;
+                        }
+                        break;
+                    }
+                    break;
+                case 2:
+                    int choice2 = -1;
+                    Scanner scanner2 = new Scanner(System.in);
+                    while (choice2 != 0) {
+                        System.out.println("Người dùng muốn hiện gì:");
+                        System.out.println("1.Hiển thị xe tải.");
+                        System.out.println("2.Hiển thị xe ôtô.");
+                        System.out.println("3.Hiển thị xe máy xe máy.");
+                        choice2 = Integer.parseInt(scanner2.nextLine());
+                        switch (choice2) {
+                            case 1:
+                                for (XeTai xe : listXeTai) {
+                                    System.out.println(xe);
+                                }
+                                break;
+                            case 2:
+                                for (OTo oto : listOTo) {
+                                    System.out.println(oto);
+                                }
+                                break;
+                            case 3:
+                                for (XeMay xemay : listXeMay) {
+                                    System.out.println(xemay);
+                                }
+                            default:
+                                break;
+                        }
+                        break;
+                    }
+                    break;
+                case 3:
 
+                    System.out.println("Nhập biển kiểm soát");
+                    String bienKiemSoatCanXoa = scanner.nextLine();
+                    for (int i = 0; i < listXeTai.size(); i++) {
+                        if (listXeTai.get(i).getBienKiemSoat().equals(bienKiemSoatCanXoa)) {
+                            System.out.println("Bạn có chắc chắn xóa không(nhập yes hoặc no)");
+                            String chonKetQua = scanner.nextLine();
+                            if (chonKetQua.equals("yes")) {
+                                listXeTai.remove(i);
+                                System.out.println("Đã xóa thành công.");
+                            } else if (chonKetQua.equals("no")) {
+                                break;
+                            }
+                        }
+
+                    }
+                    for (int i = 0; i < listOTo.size(); i++) {
+                        if (listOTo.get(i).getBienKiemSoat().equals(bienKiemSoatCanXoa)) {
+                            System.out.println("Bạn có chắc chắn xóa không(nhập yes hoặc no)");
+                            String chonKetQua = scanner.nextLine();
+                            if (chonKetQua.equals("yes")) {
+                                listOTo.remove(i);
+                                System.out.println("Đã xóa thành công.");
+                            } else if (chonKetQua.equals("no")) {
+                                break;
+                            }
+                        }
+
+                    }
+                    for (int i = 0; i < listXeMay.size(); i++) {
+                        if (listXeMay.get(i).getBienKiemSoat().equals(bienKiemSoatCanXoa)) {
+                            System.out.println("Bạn có chắc chắn xóa không(nhập yes hoặc no)");
+                            String chonKetQua = scanner.nextLine();
+                            if (chonKetQua.equals("yes")) {
+                                listXeMay.remove(i);
+                                System.out.println("Đã xóa thành công.");
+                            } else if (chonKetQua.equals("no")) {
+                                break;
+                            }
                         }
                     }
+                    break;
+                default:
+                    System.out.println("Không có sự lựa chọn");
+
             }
         }
     }
+
 }

@@ -46,6 +46,13 @@ public class MyListTest {
         myListTestMyList.add(myListTest6, 0);
         myListTestMyList.size();
         System.out.println(myListTestMyList.size());
+        myListTestMyList.get(2);
+        System.out.println(myListTestMyList.get(2));
+        myListTestMyList.remove(3);
+        System.out.println(myListTestMyList);
+        myListTestMyList.clear();
+        System.out.println(myListTestMyList);
+        myListTestMyList.clone();
 
 //        for (int i = 0; i < myListTestMyList.size() ; i++) {
 //            MyListTest myListTest = (MyListTest) myListTestMyList.elements[i];
