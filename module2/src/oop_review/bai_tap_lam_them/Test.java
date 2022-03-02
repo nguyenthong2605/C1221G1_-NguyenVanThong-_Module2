@@ -130,6 +130,8 @@ public class Test {
                                 System.out.println("Đã xóa thành công.");
                             } else if (chonKetQua.equals("no")) {
                                 break;
+                            }else {
+                                break;
                             }
                         }
 
@@ -143,6 +145,8 @@ public class Test {
                                 System.out.println("Đã xóa thành công.");
                             } else if (chonKetQua.equals("no")) {
                                 break;
+                            }else {
+                                break;
                             }
                         }
 
@@ -155,6 +159,8 @@ public class Test {
                                 listXeMay.remove(i);
                                 System.out.println("Đã xóa thành công.");
                             } else if (chonKetQua.equals("no")) {
+                                break;
+                            }else {
                                 break;
                             }
                         }
