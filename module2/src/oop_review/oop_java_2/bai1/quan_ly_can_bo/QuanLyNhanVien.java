@@ -1,9 +1,12 @@
-package oop_review.oop_java_2.bai1;
+package oop_review.oop_java_2.bai1.quan_ly_can_bo;
+
+import oop_review.oop_java_2.bai1.NhanVien;
+import oop_review.oop_java_2.bai1.sap_xep.SapXepNhanVien;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class QuanLyCongNhan {
+public class QuanLyNhanVien {
     private String hoVaTen;
 
     private int namSinh;
@@ -12,10 +15,10 @@ public class QuanLyCongNhan {
 
     private String diaChi;
 
-    private double bac;
+    private String congViec;
 
 
-    ArrayList<CongNhan> congNhanArrayList = new ArrayList<>();
+    ArrayList<NhanVien> nhanVienArrayList = new ArrayList<>();
 
     Scanner scanner = new Scanner(System.in);
 
@@ -28,32 +31,32 @@ public class QuanLyCongNhan {
         gioiTinh = scanner.nextLine();
         System.out.println("Nhập địa chỉ: ");
         diaChi = scanner.nextLine();
-        System.out.println("Nhập bậc: ");
-        bac = Double.parseDouble(scanner.nextLine());
-        CongNhan congNhan = new CongNhan(hoVaTen,namSinh,gioiTinh,diaChi,bac);
-        congNhanArrayList.add(congNhan);
+        System.out.println("Công việc: ");
+        congViec = scanner.nextLine();
+        NhanVien nhanVien = new NhanVien(hoVaTen,namSinh,gioiTinh,diaChi,congViec);
+        nhanVienArrayList.add(nhanVien);
     }
     public void timKiem(){
         boolean check = false;
         System.out.println("Nhập họ và tên cần tìm kiếm: ");
         hoVaTen = scanner.nextLine();
-        for (int i = 0; i <congNhanArrayList.size() ; i++) {
-            if (congNhanArrayList.get(i).getHoVaTen().equals(hoVaTen));
+        for (int i = 0; i <nhanVienArrayList.size() ; i++) {
+            if (nhanVienArrayList.get(i).getHoVaTen().equals(hoVaTen));
             check = true;
-            System.out.println("Người cần tìm: "+congNhanArrayList.get(i));
+            System.out.println("Người cần tìm: "+nhanVienArrayList.get(i));
         }if (!check){
             System.out.println("Không tìm thấy.");
         }
     }
     public void sapXepTheoTen(){
-        SapXepCongNhan sapXep = new SapXepCongNhan();
-        congNhanArrayList.sort(sapXep);
+        SapXepNhanVien sapXep = new SapXepNhanVien();
+        nhanVienArrayList.sort(sapXep);
         hienThi();
     }
     public void hienThi(){
-        for (CongNhan congNhan:congNhanArrayList
-             ) {
-            System.out.println(congNhan);
+        for (NhanVien nhanVien:nhanVienArrayList
+        ) {
+            System.out.println(nhanVien);
         }
     }
 }

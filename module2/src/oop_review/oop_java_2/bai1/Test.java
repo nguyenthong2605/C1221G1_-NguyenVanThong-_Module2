@@ -1,5 +1,9 @@
 package oop_review.oop_java_2.bai1;
 
+import oop_review.oop_java_2.bai1.quan_ly_can_bo.QuanLyCongNhan;
+import oop_review.oop_java_2.bai1.quan_ly_can_bo.QuanLyKySu;
+import oop_review.oop_java_2.bai1.quan_ly_can_bo.QuanLyNhanVien;
+
 import java.util.Scanner;
 
 public class Test {
