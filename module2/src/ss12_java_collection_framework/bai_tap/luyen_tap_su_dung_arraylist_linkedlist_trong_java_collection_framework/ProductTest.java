@@ -41,6 +41,8 @@ public class ProductTest {
                 case 7:
                     productManager.sapXepTangDan();
                     break;
+                case 8:
+                    System.exit(8);
                 default:
                     System.out.println("Không có sự lựa chọn!");
 
