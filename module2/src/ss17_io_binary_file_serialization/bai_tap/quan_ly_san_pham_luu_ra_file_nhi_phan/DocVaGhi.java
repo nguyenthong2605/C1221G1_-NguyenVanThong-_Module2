@@ -5,16 +5,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DocVaGhi {
-    public  List<SanPham> docFileSanPham() {
+    public static List<SanPham> docFileSanPham() {
         List<SanPham> sanPhamList = new ArrayList<>();
         File file = new File("E:\\Codegym\\C1221G1_NguyenVanThong_Module2\\module2\\src\\ss17_io_binary_file_serialization\\bai_tap\\quan_ly_san_pham_luu_ra_file_nhi_phan\\fiel.dat");
         FileInputStream fileInputStream = null;
         ObjectInputStream objectInputStream = null;
         try {
-            if (file.length() > 0)
+            if (file.length() > 0){
                 fileInputStream = new FileInputStream(file);
-            objectInputStream = new ObjectInputStream(fileInputStream);
-            sanPhamList = (List<SanPham>) objectInputStream.readObject();
+                objectInputStream = new ObjectInputStream(fileInputStream);
+                sanPhamList = (List<SanPham>) objectInputStream.readObject();
+            }
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {
@@ -34,13 +35,14 @@ public class DocVaGhi {
         return sanPhamList;
 
     }
-    public  void ghiFileSanPham(List<SanPham> sanPhamList){
+    public static void ghiFileSanPham(List<SanPham> sanPhamList){
         File file = new File("E:\\Codegym\\C1221G1_NguyenVanThong_Module2\\module2\\src\\ss17_io_binary_file_serialization\\bai_tap\\quan_ly_san_pham_luu_ra_file_nhi_phan\\fiel.dat");
         FileOutputStream fileOutputStream = null;
         ObjectOutputStream objectOutputStream = null;
         try {
             fileOutputStream = new FileOutputStream(file);
             objectOutputStream = new ObjectOutputStream(fileOutputStream);
+            objectOutputStream.writeObject(sanPhamList);
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {

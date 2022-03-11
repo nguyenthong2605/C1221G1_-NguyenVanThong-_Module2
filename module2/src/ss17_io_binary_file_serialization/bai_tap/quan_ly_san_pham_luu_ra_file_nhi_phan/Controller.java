@@ -4,7 +4,8 @@ import java.util.Scanner;
 
 public class Controller {
     public void menu() {
-        SanPhamImpl sanPham = new SanPhamImpl();
+       SanPhamImpl sanPham = new SanPhamImpl();
+
         int choice = -1;
         Scanner scanner = new Scanner(System.in);
         while (choice != 0) {
@@ -12,7 +13,8 @@ public class Controller {
             System.out.println("1. Thêm");
             System.out.println("2. Hiển thị");
             System.out.println("3. Tìm kiếm thông tin sản phẩm vào file");
-            System.out.println("4. Thoát");
+            System.out.println("4. Lưu thông tin sản phẩm vào file");
+            System.out.println("5. Thoát");
             System.out.println("Mời bạn chọn.");
             choice = Integer.parseInt(scanner.nextLine());
             switch (choice){
@@ -26,7 +28,10 @@ public class Controller {
                     sanPham.timKiem();
                     break;
                 case 4:
-                    System.exit(4);
+                    sanPham.saveToFile();
+                    break;
+                case 5:
+                    System.exit(5);
                 default:
                     System.out.println("Không có sự lựa chọn! ");
             }

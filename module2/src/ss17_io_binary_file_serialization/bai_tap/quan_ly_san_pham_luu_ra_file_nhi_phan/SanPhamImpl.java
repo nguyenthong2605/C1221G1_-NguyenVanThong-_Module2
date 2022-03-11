@@ -1,11 +1,16 @@
 package ss17_io_binary_file_serialization.bai_tap.quan_ly_san_pham_luu_ra_file_nhi_phan;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class SanPhamImpl {
-    ArrayList<SanPham> sanPhamArrayList = new ArrayList<>();
-    DocVaGhi docVaGhi = new DocVaGhi();
+    public static List<SanPham> sanPhamArrayList = new ArrayList<>();
+
+    static {
+        sanPhamArrayList=DocVaGhi.docFileSanPham();
+    }
+
     Scanner scanner = new Scanner(System.in);
 
     public void them() {
@@ -21,10 +26,11 @@ public class SanPhamImpl {
         String cacMoTaKhac = scanner.nextLine();
         SanPham sanPham = new SanPham(maSanPham, tenSanPham, hanSanXuat, gia, cacMoTaKhac);
         sanPhamArrayList.add(sanPham);
-        docVaGhi.ghiFileSanPham(sanPhamArrayList);
+//        DocVaGhi.ghiFileSanPham(sanPhamArrayList);
     }
 
     public void hienThi() {
+        //sanPhamArrayList = (ArrayList<SanPham>) docVaGhi.docFileSanPham();
         for (SanPham sanpham : sanPhamArrayList) {
             System.out.println(sanpham);
 
@@ -32,6 +38,7 @@ public class SanPhamImpl {
     }
 
     public void timKiem() {
+        //sanPhamArrayList = (ArrayList<SanPham>) docVaGhi.docFileSanPham();
         boolean check = false;
         System.out.println("Nhập mã sản phẩm cần tìm: ");
         String maSanPham = scanner.nextLine();
@@ -45,5 +52,10 @@ public class SanPhamImpl {
             }
 
         }
+    }
+
+    public void saveToFile() {
+        DocVaGhi.ghiFileSanPham(sanPhamArrayList);
+        System.out.println("Dữ liệu đã luu");
     }
 }
