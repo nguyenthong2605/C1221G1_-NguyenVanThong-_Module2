@@ -1,7 +1,7 @@
-package on_tap.customer_manager.service;
+package customer_manager.service;
 
-import on_tap.customer_manager.models.Customer;
-import on_tap.customer_manager.util.ReadAndWrite;
+import customer_manager.models.Customer;
+import customer_manager.util.ReadAndWrite;
 
 import java.util.ArrayList;
 import java.util.List;

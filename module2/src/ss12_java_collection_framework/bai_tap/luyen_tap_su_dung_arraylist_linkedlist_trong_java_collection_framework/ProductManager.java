@@ -3,7 +3,7 @@ package ss12_java_collection_framework.bai_tap.luyen_tap_su_dung_arraylist_linke
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class ProductManager {
+public class    ProductManager {
     private String tenSanPham;
 
     private int id;

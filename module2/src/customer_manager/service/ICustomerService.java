@@ -1,4 +1,4 @@
-package on_tap.customer_manager.service;
+package customer_manager.service;
 
 public interface ICustomerService {
     void add();

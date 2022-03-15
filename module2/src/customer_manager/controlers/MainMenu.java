@@ -1,7 +1,7 @@
-package on_tap.customer_manager.controlers;
+package customer_manager.controlers;
 
-import on_tap.customer_manager.service.CustomerServiceImpl;
-import on_tap.customer_manager.service.ICustomerService;
+import customer_manager.service.CustomerServiceImpl;
+import customer_manager.service.ICustomerService;
 
 import java.util.Scanner;
 

@@ -1,6 +1,6 @@
-package on_tap.customer_manager.util;
+package customer_manager.util;
 
-import on_tap.customer_manager.models.Customer;
+import customer_manager.models.Customer;
 
 import java.io.*;
 import java.util.ArrayList;

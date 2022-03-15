@@ -1,4 +1,4 @@
-package on_tap.customer_manager.models;
+package customer_manager.models;
 
 public class Customer {
     int id;

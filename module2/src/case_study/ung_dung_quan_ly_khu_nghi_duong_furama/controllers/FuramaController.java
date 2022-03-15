@@ -1,9 +1,14 @@
 package case_study.ung_dung_quan_ly_khu_nghi_duong_furama.controllers;
 
+import case_study.ung_dung_quan_ly_khu_nghi_duong_furama.model.Employee;
+import case_study.ung_dung_quan_ly_khu_nghi_duong_furama.services.EmployeeService;
+import case_study.ung_dung_quan_ly_khu_nghi_duong_furama.services.impl.EmployeeServiceImpl;
+
 import java.util.Scanner;
 
-public class FuramaController {
+public class  FuramaController {
     public void displayMainMenu() {
+        EmployeeServiceImpl employeeService = new EmployeeServiceImpl();
         int choice = -1;
         Scanner scanner = new Scanner(System.in);
         while (choice != 0) {
@@ -29,14 +34,19 @@ public class FuramaController {
                         choice1 = Integer.parseInt(scanner1.nextLine());
                         switch (choice1) {
                             case 1:
+                                employeeService.disPlay();
                                 break;
                             case 2:
+                                employeeService.add();
                                 break;
                             case 3:
+                                employeeService.edit();
                                 break;
                             case 4:
+                                choice1 = 0;
                                 break;
                         }
+
                     }
                     break;
                 case 2:

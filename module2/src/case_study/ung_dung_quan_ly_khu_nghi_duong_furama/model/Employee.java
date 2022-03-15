@@ -1,7 +1,7 @@
 package case_study.ung_dung_quan_ly_khu_nghi_duong_furama.model;
 
 public class Employee extends Person {
-    private String maNhanVien;
+    private int maNhanVien;
     private String trinhDo;
     private String viTri;
     private double luong;
@@ -9,7 +9,7 @@ public class Employee extends Person {
     public Employee() {
     }
 
-    public Employee(String hoVaTen, int ngaySinh, String gioiTinh, int soCMND, String soDienThoai, String eMail, String maNhanVien, String trinhDo, String viTri, double luong) {
+    public Employee(String hoVaTen, int ngaySinh, String gioiTinh, int soCMND, String soDienThoai, String eMail, int maNhanVien, String trinhDo, String viTri, double luong) {
         super(hoVaTen, ngaySinh, gioiTinh, soCMND, soDienThoai, eMail);
         this.maNhanVien = maNhanVien;
         this.trinhDo = trinhDo;
@@ -17,11 +17,11 @@ public class Employee extends Person {
         this.luong = luong;
     }
 
-    public String getMaNhanVien() {
+    public int getMaNhanVien() {
         return maNhanVien;
     }
 
-    public void setMaNhanVien(String maNhanVien) {
+    public void setMaNhanVien(int maNhanVien) {
         this.maNhanVien = maNhanVien;
     }
 
@@ -52,7 +52,7 @@ public class Employee extends Person {
     @Override
     public String toString() {
         return "Employee{" + super.toString() +
-                "maNhanVien='" + maNhanVien + '\'' +
+                ", maNhanVien='" + maNhanVien + '\'' +
                 ", trinhDo='" + trinhDo + '\'' +
                 ", viTri='" + viTri + '\'' +
                 ", luong=" + luong +
