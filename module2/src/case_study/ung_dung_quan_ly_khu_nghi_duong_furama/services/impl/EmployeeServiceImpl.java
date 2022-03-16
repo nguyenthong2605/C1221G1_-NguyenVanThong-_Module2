@@ -4,30 +4,37 @@ import case_study.ung_dung_quan_ly_khu_nghi_duong_furama.model.Employee;
 import case_study.ung_dung_quan_ly_khu_nghi_duong_furama.services.EmployeeService;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class EmployeeServiceImpl implements EmployeeService {
+    public static List<Employee> employeeArrayList = new ArrayList<>();
+
+    static {
+        employeeArrayList.add(new Employee("nguyễn văn thông", "26", "nam", "123456", "0338592181", "nguyenthong2652000@gmail.com", "123", "đại học", "giám đốc", "3000"));
+        employeeArrayList.add(new Employee("huỳnh thị út quyên", "7", "nữ", "654321", "0367692847", "utquyen71000@gmail.com", "456", "cao đẳng", "lễ tân", "1000"));
+    }
+
     private String hoVaTen;
 
-    private int ngaySinh;
+    private String ngaySinh;
 
     private String gioiTinh;
 
-    private int soCMND;
+    private String soCMND;
 
     private String soDienThoai;
 
     private String eMail;
 
-    private int maNhanVien;
+    private String maNhanVien;
 
     private String trinhDo;
 
     private String viTri;
 
-    private double luong;
+    private String luong;
 
-    public static ArrayList<Employee> employeeArrayList = new ArrayList<>();
 
     Scanner scanner = new Scanner(System.in);
 
@@ -43,23 +50,23 @@ public class EmployeeServiceImpl implements EmployeeService {
         System.out.println("Nhập họ và tên: ");
         hoVaTen = scanner.nextLine();
         System.out.println("Nhập ngày sinh:");
-        ngaySinh = Integer.parseInt(scanner.nextLine());
+        ngaySinh = scanner.nextLine();
         System.out.println("Nhập giới tính: ");
         gioiTinh = scanner.nextLine();
         System.out.println("Nhập số CMND: ");
-        soCMND = Integer.parseInt(scanner.nextLine());
+        soCMND = scanner.nextLine();
         System.out.println("Nhập số điện thoai: ");
         soDienThoai = scanner.nextLine();
         System.out.println("Nhập Email: ");
         eMail = scanner.nextLine();
         System.out.println("Nhập mã nhân viên: ");
-        maNhanVien = Integer.parseInt(scanner.nextLine());
+        maNhanVien = scanner.nextLine();
         System.out.println("Nhập trình độ: ");
         trinhDo = scanner.nextLine();
         System.out.println("Nhập vị trí: ");
         viTri = scanner.nextLine();
         System.out.println("Nhập lương: ");
-        luong = Double.parseDouble(scanner.nextLine());
+        luong = scanner.nextLine();
         Employee employee = new Employee(hoVaTen, ngaySinh, gioiTinh, soCMND, soDienThoai, eMail, maNhanVien, trinhDo, viTri, luong);
         employeeArrayList.add(employee);
     }
@@ -67,36 +74,72 @@ public class EmployeeServiceImpl implements EmployeeService {
     @Override
     public void edit() {
         System.out.println("Nhập mã nhân viên cần sửa đổi thông tin: ");
-        maNhanVien = Integer.parseInt(scanner.nextLine());
+        maNhanVien = scanner.nextLine();
         for (int i = 0; i < employeeArrayList.size(); i++) {
-            if (employeeArrayList.get(i).getMaNhanVien() == maNhanVien) {
+            if (employeeArrayList.get(i).getMaNhanVien().equals(maNhanVien)) {
                 System.out.println("Nhập họ và tên:");
                 hoVaTen = scanner.nextLine();
-                employeeArrayList.get(i).setHoVaTen(hoVaTen);
+                if (hoVaTen.equals("")) {
+                    employeeArrayList.get(i).setHoVaTen(employeeArrayList.get(i).getHoVaTen());
+                } else {
+                    employeeArrayList.get(i).setHoVaTen(hoVaTen);
+                }
                 System.out.println("Nhập ngày sinh:");
-                ngaySinh = Integer.parseInt(scanner.nextLine());
-                employeeArrayList.get(i).setNgaySinh(ngaySinh);
+                ngaySinh = scanner.nextLine();
+                if (ngaySinh.equals("")) {
+                    employeeArrayList.get(i).setNgaySinh(employeeArrayList.get(i).getNgaySinh());
+                } else {
+                    employeeArrayList.get(i).setNgaySinh(ngaySinh);
+                }
                 System.out.println("Nhập giới tính: ");
                 gioiTinh = scanner.nextLine();
-                employeeArrayList.get(i).setGioiTinh(gioiTinh);
+                if (gioiTinh.equals("")) {
+                    employeeArrayList.get(i).setGioiTinh(employeeArrayList.get(i).getGioiTinh());
+                } else {
+                    employeeArrayList.get(i).setGioiTinh(gioiTinh);
+                }
                 System.out.println("Nhập số CMND: ");
-                soCMND = Integer.parseInt(scanner.nextLine());
-                employeeArrayList.get(i).setSoCMND(soCMND);
+                soCMND = scanner.nextLine();
+                if (soCMND.equals("")) {
+                    employeeArrayList.get(i).setSoCMND(employeeArrayList.get(i).getSoCMND());
+                } else {
+                    employeeArrayList.get(i).setSoCMND(soCMND);
+                }
                 System.out.println("Nhập số điện thoai: ");
                 soDienThoai = scanner.nextLine();
-                employeeArrayList.get(i).setSoDienThoai(soDienThoai);
+                if (soDienThoai.equals("")) {
+                    employeeArrayList.get(i).setSoDienThoai(employeeArrayList.get(i).getSoDienThoai());
+                } else {
+                    employeeArrayList.get(i).setSoDienThoai(soDienThoai);
+                }
                 System.out.println("Nhập Email: ");
                 eMail = scanner.nextLine();
-                employeeArrayList.get(i).seteMail(eMail);
+                if (eMail.equals("")) {
+                    employeeArrayList.get(i).seteMail(employeeArrayList.get(i).geteMail());
+                } else {
+                    employeeArrayList.get(i).seteMail(eMail);
+                }
                 System.out.println("Nhập trình độ: ");
                 trinhDo = scanner.nextLine();
-                employeeArrayList.get(i).setTrinhDo(trinhDo);
+                if (trinhDo.equals("")) {
+                    employeeArrayList.get(i).setTrinhDo(employeeArrayList.get(i).getTrinhDo());
+                } else {
+                    employeeArrayList.get(i).setTrinhDo(trinhDo);
+                }
                 System.out.println("Nhập vị trí: ");
                 viTri = scanner.nextLine();
-                employeeArrayList.get(i).setViTri(viTri);
+                if (viTri.equals("")) {
+                    employeeArrayList.get(i).setViTri(employeeArrayList.get(i).getViTri());
+                } else {
+                    employeeArrayList.get(i).setViTri(viTri);
+                }
                 System.out.println("Nhập lương: ");
-                luong = Double.parseDouble(scanner.nextLine());
-                employeeArrayList.get(i).setLuong(luong);
+                String luong = scanner.nextLine();
+                if (luong.equals("")) {
+                    employeeArrayList.get(i).setLuong(employeeArrayList.get(i).getLuong());
+                } else {
+                    employeeArrayList.get(i).setLuong(luong);
+                }
             }
         }
     }

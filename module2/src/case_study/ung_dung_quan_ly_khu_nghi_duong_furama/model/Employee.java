@@ -1,15 +1,15 @@
 package case_study.ung_dung_quan_ly_khu_nghi_duong_furama.model;
 
 public class Employee extends Person {
-    private int maNhanVien;
+    private String maNhanVien;
     private String trinhDo;
     private String viTri;
-    private double luong;
+    private String luong;
 
     public Employee() {
     }
 
-    public Employee(String hoVaTen, int ngaySinh, String gioiTinh, int soCMND, String soDienThoai, String eMail, int maNhanVien, String trinhDo, String viTri, double luong) {
+    public Employee(String hoVaTen, String ngaySinh, String gioiTinh, String soCMND, String soDienThoai, String eMail, String maNhanVien, String trinhDo, String viTri, String luong) {
         super(hoVaTen, ngaySinh, gioiTinh, soCMND, soDienThoai, eMail);
         this.maNhanVien = maNhanVien;
         this.trinhDo = trinhDo;
@@ -17,11 +17,11 @@ public class Employee extends Person {
         this.luong = luong;
     }
 
-    public int getMaNhanVien() {
+    public String getMaNhanVien() {
         return maNhanVien;
     }
 
-    public void setMaNhanVien(int maNhanVien) {
+    public void setMaNhanVien(String maNhanVien) {
         this.maNhanVien = maNhanVien;
     }
 
@@ -41,11 +41,11 @@ public class Employee extends Person {
         this.viTri = viTri;
     }
 
-    public double getLuong() {
+    public String getLuong() {
         return luong;
     }
 
-    public void setLuong(double luong) {
+    public void setLuong(String luong) {
         this.luong = luong;
     }
 

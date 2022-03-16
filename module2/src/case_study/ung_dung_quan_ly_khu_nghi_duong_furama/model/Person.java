@@ -2,16 +2,16 @@ package case_study.ung_dung_quan_ly_khu_nghi_duong_furama.model;
 
 public abstract class Person {
     private String hoVaTen;
-    private int ngaySinh;
+    private String ngaySinh;
     private String gioiTinh;
-    private int soCMND;
+    private String soCMND;
     private String soDienThoai;
     private String eMail;
 
     public Person() {
     }
 
-    public Person(String hoVaTen, int ngaySinh, String gioiTinh, int soCMND, String soDienThoai, String eMail) {
+    public Person(String hoVaTen, String ngaySinh, String gioiTinh, String soCMND, String soDienThoai, String eMail) {
         this.hoVaTen = hoVaTen;
         this.ngaySinh = ngaySinh;
         this.gioiTinh = gioiTinh;
@@ -28,11 +28,11 @@ public abstract class Person {
         this.hoVaTen = hoVaTen;
     }
 
-    public int getNgaySinh() {
+    public String getNgaySinh() {
         return ngaySinh;
     }
 
-    public void setNgaySinh(int ngaySinh) {
+    public void setNgaySinh(String ngaySinh) {
         this.ngaySinh = ngaySinh;
     }
 
@@ -44,11 +44,11 @@ public abstract class Person {
         this.gioiTinh = gioiTinh;
     }
 
-    public int getSoCMND() {
+    public String getSoCMND() {
         return soCMND;
     }
 
-    public void setSoCMND(int soCMND) {
+    public void setSoCMND(String soCMND) {
         this.soCMND = soCMND;
     }
 

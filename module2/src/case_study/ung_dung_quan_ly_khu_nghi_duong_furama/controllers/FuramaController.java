@@ -2,13 +2,19 @@ package case_study.ung_dung_quan_ly_khu_nghi_duong_furama.controllers;
 
 import case_study.ung_dung_quan_ly_khu_nghi_duong_furama.model.Employee;
 import case_study.ung_dung_quan_ly_khu_nghi_duong_furama.services.EmployeeService;
+import case_study.ung_dung_quan_ly_khu_nghi_duong_furama.services.impl.CustomerServiceImpl;
 import case_study.ung_dung_quan_ly_khu_nghi_duong_furama.services.impl.EmployeeServiceImpl;
+import case_study.ung_dung_quan_ly_khu_nghi_duong_furama.services.impl.FacilityServiceImpl;
 
 import java.util.Scanner;
 
-public class  FuramaController {
+public class FuramaController {
     public void displayMainMenu() {
         EmployeeServiceImpl employeeService = new EmployeeServiceImpl();
+
+        CustomerServiceImpl customerService = new CustomerServiceImpl();
+
+        FacilityServiceImpl facilityService = new FacilityServiceImpl();
         int choice = -1;
         Scanner scanner = new Scanner(System.in);
         while (choice != 0) {
@@ -61,12 +67,16 @@ public class  FuramaController {
                         choice2 = Integer.parseInt(scanner2.nextLine());
                         switch (choice2) {
                             case 1:
+                                customerService.disPlay();
                                 break;
                             case 2:
+                                customerService.add();
                                 break;
                             case 3:
+                                customerService.edit();
                                 break;
                             case 4:
+                                choice2 = 0;
                                 break;
                         }
                     }
@@ -83,12 +93,35 @@ public class  FuramaController {
                         choice3 = Integer.parseInt(scanner3.nextLine());
                         switch (choice3) {
                             case 1:
+                                facilityService.hienThi();
                                 break;
                             case 2:
+                                int choice4 = -1;
+                                Scanner scanner4 = new Scanner(System.in);
+                                while (choice4 != 0) {
+                                    System.out.println("1. Add new villa.");
+                                    System.out.println("2. Add new house");
+                                    System.out.println("3. Add new room");
+                                    System.out.println("4. Return main menu");
+                                    choice4 = Integer.parseInt(scanner4.nextLine());
+                                    switch (choice4) {
+                                        case 1:
+                                            facilityService.themMoiVilla();
+                                            break;
+                                        case 2:
+                                            break;
+                                        case 3:
+                                            break;
+                                        case 4:
+                                            choice4 = 0;
+                                            break;
+                                    }
+                                }
                                 break;
                             case 3:
                                 break;
                             case 4:
+                                choice3 = 0;
                                 break;
                         }
                     }
@@ -128,7 +161,8 @@ public class  FuramaController {
                         System.out.println("---MENU Promotion Management---");
                         System.out.println("1. Display list customers use service");
                         System.out.println("2. Display list customers get voucher");
-                        System.out.println("3. Return main menu");;
+                        System.out.println("3. Return main menu");
+                        ;
                         choice5 = Integer.parseInt(scanner5.nextLine());
                         switch (choice5) {
                             case 1:
