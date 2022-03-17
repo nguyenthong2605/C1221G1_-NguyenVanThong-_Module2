@@ -93,7 +93,7 @@ public class FuramaController {
                         choice3 = Integer.parseInt(scanner3.nextLine());
                         switch (choice3) {
                             case 1:
-                                facilityService.hienThi();
+                                facilityService.disPlay();
                                 break;
                             case 2:
                                 int choice4 = -1;
@@ -106,11 +106,13 @@ public class FuramaController {
                                     choice4 = Integer.parseInt(scanner4.nextLine());
                                     switch (choice4) {
                                         case 1:
-                                            facilityService.themMoiVilla();
+                                            facilityService.addVilla();
                                             break;
                                         case 2:
+                                            facilityService.addHouse();
                                             break;
                                         case 3:
+                                            facilityService.addRoom();
                                             break;
                                         case 4:
                                             choice4 = 0;
@@ -119,6 +121,7 @@ public class FuramaController {
                                 }
                                 break;
                             case 3:
+                                facilityService.maintenanceDisplay();
                                 break;
                             case 4:
                                 choice3 = 0;

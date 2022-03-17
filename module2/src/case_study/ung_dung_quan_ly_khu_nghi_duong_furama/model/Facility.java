@@ -2,20 +2,27 @@ package case_study.ung_dung_quan_ly_khu_nghi_duong_furama.model;
 
 public abstract class Facility {
     private String tenDichVu;
+
     private double dienTichSuDung;
+
     private double chiPhiThue;
+
     private int soLuongNguoiToiDa;
+
     private String kieuThue;
+
+    private String maDichVu;
 
     public Facility() {
     }
 
-    public Facility(String tenDichVu, double dienTichSuDung, double chiPhiThue, int soLuongNguoiToiDa, String kieuThue) {
+    public Facility(String tenDichVu, double dienTichSuDung, double chiPhiThue, int soLuongNguoiToiDa, String kieuThue, String maDichVu) {
         this.tenDichVu = tenDichVu;
         this.dienTichSuDung = dienTichSuDung;
         this.chiPhiThue = chiPhiThue;
         this.soLuongNguoiToiDa = soLuongNguoiToiDa;
         this.kieuThue = kieuThue;
+        this.maDichVu = maDichVu;
     }
 
     public String getTenDichVu() {
@@ -58,13 +65,26 @@ public abstract class Facility {
         this.kieuThue = kieuThue;
     }
 
+    public String getMaDichVu() {
+        return maDichVu;
+    }
+
+    public void setMaDichVu(String maDichVu) {
+        this.maDichVu = maDichVu;
+    }
+
+
     @Override
     public String toString() {
         return
                 "tenDichVu='" + tenDichVu + '\'' +
-                ", dienTichSuDung=" + dienTichSuDung +
-                ", chiPhiThue=" + chiPhiThue +
-                ", soLuongNguoiToiDa=" + soLuongNguoiToiDa +
-                ", kieuThue='" + kieuThue + '\'';
+                        ", dienTichSuDung=" + dienTichSuDung +
+                        ", chiPhiThue=" + chiPhiThue +
+                        ", soLuongNguoiToiDa=" + soLuongNguoiToiDa +
+                        ", kieuThue='" + kieuThue +
+                        ", madichvu='" + maDichVu + '\'';
     }
+//    public String toCSVFormat() {
+//        return tenDichVu + ","; 
+//    }
 }

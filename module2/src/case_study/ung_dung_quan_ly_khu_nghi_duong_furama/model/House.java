@@ -7,8 +7,8 @@ public class House extends Facility{
     public House() {
     }
 
-    public House(String tenDichVu, double dienTichSuDung, double chiPhiThue, int soLuongNguoiToiDa, String kieuThue, String tieuChuanPhong, int soTang) {
-        super(tenDichVu, dienTichSuDung, chiPhiThue, soLuongNguoiToiDa, kieuThue);
+    public House(String tenDichVu, double dienTichSuDung, double chiPhiThue, int soLuongNguoiToiDa, String kieuThue, String maDichVu, String tieuChuanPhong, int soTang) {
+        super(tenDichVu, dienTichSuDung, chiPhiThue, soLuongNguoiToiDa, kieuThue, maDichVu);
         this.tieuChuanPhong = tieuChuanPhong;
         this.soTang = soTang;
     }
