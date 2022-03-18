@@ -1,6 +1,6 @@
 package case_study.ung_dung_quan_ly_khu_nghi_duong_furama.model;
 
-public class Room extends Facility{
+public class Room extends Facility {
     private String dichVuMienPhiDiKem;
 
     public Room() {
@@ -24,5 +24,10 @@ public class Room extends Facility{
         return "Room{" + super.toString() +
                 "dichVuMienPhiDiKem='" + dichVuMienPhiDiKem + '\'' +
                 '}';
+    }
+
+    public String getInfoToCSV() {
+        return super.getInfoToCSV() + COMMA +
+                this.getDichVuMienPhiDiKem();
     }
 }

@@ -2,6 +2,7 @@ package case_study.ung_dung_quan_ly_khu_nghi_duong_furama.services.impl;
 
 import case_study.ung_dung_quan_ly_khu_nghi_duong_furama.model.Employee;
 import case_study.ung_dung_quan_ly_khu_nghi_duong_furama.services.EmployeeService;
+import case_study.ung_dung_quan_ly_khu_nghi_duong_furama.utils.ReadAndWrite;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,6 +14,10 @@ public class EmployeeServiceImpl implements EmployeeService {
     static {
         employeeArrayList.add(new Employee("nguyễn văn thông", "26", "nam", "123456", "0338592181", "nguyenthong2652000@gmail.com", "123", "đại học", "giám đốc", "3000"));
         employeeArrayList.add(new Employee("huỳnh thị út quyên", "7", "nữ", "654321", "0367692847", "utquyen71000@gmail.com", "456", "cao đẳng", "lễ tân", "1000"));
+    }
+
+    static {
+        employeeArrayList = ReadAndWrite.readEmployeeListFromCSV();
     }
 
     private String hoVaTen;
@@ -69,6 +74,7 @@ public class EmployeeServiceImpl implements EmployeeService {
         luong = scanner.nextLine();
         Employee employee = new Employee(hoVaTen, ngaySinh, gioiTinh, soCMND, soDienThoai, eMail, maNhanVien, trinhDo, viTri, luong);
         employeeArrayList.add(employee);
+        ReadAndWrite.writeEmployeeListFromCSV(employeeArrayList,false);
     }
 
     @Override
@@ -140,6 +146,7 @@ public class EmployeeServiceImpl implements EmployeeService {
                 } else {
                     employeeArrayList.get(i).setLuong(luong);
                 }
+                ReadAndWrite.writeEmployeeListFromCSV(employeeArrayList,false);
             }
         }
     }

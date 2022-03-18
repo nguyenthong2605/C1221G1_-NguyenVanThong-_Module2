@@ -5,11 +5,10 @@ import case_study.ung_dung_quan_ly_khu_nghi_duong_furama.model.House;
 import case_study.ung_dung_quan_ly_khu_nghi_duong_furama.model.Room;
 import case_study.ung_dung_quan_ly_khu_nghi_duong_furama.model.Villa;
 import case_study.ung_dung_quan_ly_khu_nghi_duong_furama.services.FacilityService;
+import case_study.ung_dung_quan_ly_khu_nghi_duong_furama.utils.ReadAndWrite;
 import case_study.ung_dung_quan_ly_khu_nghi_duong_furama.utils.RegexDaTa;
 
-import java.util.LinkedHashMap;
-import java.util.Map;
-import java.util.Scanner;
+import java.util.*;
 
 public class FacilityServiceImpl implements FacilityService {
 
@@ -29,7 +28,19 @@ public class FacilityServiceImpl implements FacilityService {
 
     private static Map<Facility, Integer> facilityIntegerMap = new LinkedHashMap<>();
 
+    private static List<House> houseList = new ArrayList<>();
+
+    private static List<Villa> villaList = new ArrayList<>();
+
+    private static List<Room> roomList = new ArrayList<>();
+
     private static Scanner scanner = new Scanner(System.in);
+
+    static {
+        houseList = ReadAndWrite.readHouseListFromCSV();
+        villaList = ReadAndWrite.readVillaListFromCSV();
+        roomList = ReadAndWrite.readRoomListFromCSV();
+    }
 
     @Override
     public void disPlay() {
@@ -65,6 +76,8 @@ public class FacilityServiceImpl implements FacilityService {
         int soTang = Integer.parseInt(inPutFloors());
         Villa villa = new Villa(tenDichVu, dienTichSuDung, chiPhiThue, soLuongNguoiToiDa, kieuThue, maDichVu, tieuChuanPhong, dienTichHoBoi, soTang);
         facilityIntegerMap.put(villa, 0);
+        villaList.add(villa);
+        ReadAndWrite.writeVillaListFromCSV(villaList, false);
 
     }
 
@@ -138,6 +151,8 @@ public class FacilityServiceImpl implements FacilityService {
         int soTang = Integer.parseInt(inPutFloors());
         House house = new House(tenDichVu, dienTichSuDung, chiPhiThue, soLuongNguoiToiDa, kieuThue, maDichVu, tieuChuanPhong, soTang);
         facilityIntegerMap.put(house, 0);
+        houseList.add(house);
+        ReadAndWrite.writeHouserListFromCSV(houseList, false);
     }
 
     @Override
@@ -158,5 +173,7 @@ public class FacilityServiceImpl implements FacilityService {
         String dichVuMienPhiDiKem = scanner.nextLine();
         Room room = new Room(tenDichVu, dienTichSuDung, chiPhiThue, soLuongNguoiToiDa, kieuThue, maDichVu, dichVuMienPhiDiKem);
         facilityIntegerMap.put(room, 0);
+        roomList.add(room);
+        ReadAndWrite.writeRoomListFromCSV(roomList, false);
     }
 }

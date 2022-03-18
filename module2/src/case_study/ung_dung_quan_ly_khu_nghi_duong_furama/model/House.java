@@ -36,4 +36,9 @@ public class House extends Facility{
                 ", soTang=" + soTang +
                 '}';
     }
+    public String getInfoToCSV(){
+        return super.getInfoToCSV()+COMMA +
+                this.getTieuChuanPhong()+COMMA +
+                this.getSoTang();
+    }
 }

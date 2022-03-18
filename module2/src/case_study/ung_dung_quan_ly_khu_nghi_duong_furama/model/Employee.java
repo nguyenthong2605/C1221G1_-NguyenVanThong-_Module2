@@ -58,4 +58,11 @@ public class Employee extends Person {
                 ", luong=" + luong +
                 '}';
     }
+    public String getInfoToCSV(){
+        return super.getInfoToCSV()+COMMA+
+                this.getMaNhanVien()+COMMA+
+                this.getTrinhDo()+COMMA+
+                this.getViTri()+COMMA+
+                this.getLuong();
+    }
 }

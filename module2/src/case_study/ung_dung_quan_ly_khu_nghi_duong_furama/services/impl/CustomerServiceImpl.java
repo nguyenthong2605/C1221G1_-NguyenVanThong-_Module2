@@ -2,6 +2,7 @@ package case_study.ung_dung_quan_ly_khu_nghi_duong_furama.services.impl;
 
 import case_study.ung_dung_quan_ly_khu_nghi_duong_furama.model.Customer;
 import case_study.ung_dung_quan_ly_khu_nghi_duong_furama.services.CustomerService;
+import case_study.ung_dung_quan_ly_khu_nghi_duong_furama.utils.ReadAndWrite;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -13,6 +14,10 @@ public class CustomerServiceImpl implements CustomerService {
         customerLinkedList.add(new Customer("châu bùi","1","nữ","112","0984384933","chaubui@gmail.com","a1233","Diamond","đà nẵng"));
         customerLinkedList.add(new Customer("phan an","3","nam","114","0123824422","phânn@gmail.com","g1221","Platinium","quảng nam"));
         customerLinkedList.add(new Customer("hoàng long","6","nam","110","0383829112","hoanglong@gmail.com","a9876","Gold","hà nội"));
+    }
+
+    static {
+        customerLinkedList = ReadAndWrite.readCustomerListFromCSV();
     }
     Scanner scanner = new Scanner(System.in);
 
@@ -62,8 +67,7 @@ public class CustomerServiceImpl implements CustomerService {
         System.out.println("Nhập địa chỉ: ");
         diaChi = scanner.nextLine();
         customerLinkedList.add(new Customer(hoVaTen, ngaySinh, gioiTinh, soCMND, soDienThoai, eMail, maKhachHang, loaiKhach, diaChi));
-
-
+        ReadAndWrite.writeCustomerListFromCSV(customerLinkedList,false);
     }
 
     @Override
@@ -135,8 +139,8 @@ public class CustomerServiceImpl implements CustomerService {
                 } else {
                     customerLinkedList.get(i).setDiaChi(diaChi);
                 }
+                ReadAndWrite.writeCustomerListFromCSV(customerLinkedList,false);
             }
-
         }
     }
 }

@@ -13,6 +13,8 @@ public abstract class Facility {
 
     private String maDichVu;
 
+    protected final String COMMA = ",";
+
     public Facility() {
     }
 
@@ -84,7 +86,14 @@ public abstract class Facility {
                         ", kieuThue='" + kieuThue +
                         ", madichvu='" + maDichVu + '\'';
     }
-//    public String toCSVFormat() {
-//        return tenDichVu + ","; 
-//    }
+
+    public String getInfoToCSV() {
+        return this.getTenDichVu() + COMMA +
+                this.getTenDichVu() + COMMA +
+                this.getDienTichSuDung() + COMMA +
+                this.getChiPhiThue() + COMMA +
+                this.getSoLuongNguoiToiDa() + COMMA +
+                this.getKieuThue() + COMMA +
+                this.getMaDichVu();
+    }
 }

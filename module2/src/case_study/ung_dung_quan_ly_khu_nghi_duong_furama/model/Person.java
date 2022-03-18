@@ -2,11 +2,18 @@ package case_study.ung_dung_quan_ly_khu_nghi_duong_furama.model;
 
 public abstract class Person {
     private String hoVaTen;
+
     private String ngaySinh;
+
     private String gioiTinh;
+
     private String soCMND;
+
     private String soDienThoai;
+
     private String eMail;
+
+    protected final String COMMA = ",";
 
     public Person() {
     }
@@ -72,10 +79,19 @@ public abstract class Person {
     public String toString() {
         return
                 "hoVaTen='" + hoVaTen + '\'' +
-                ", ngaySinh=" + ngaySinh +
-                ", gioiTinh='" + gioiTinh + '\'' +
-                ", soCMND=" + soCMND +
-                ", soDienThoai='" + soDienThoai + '\'' +
-                ", eMail='" + eMail + '\'' ;
+                        ", ngaySinh=" + ngaySinh +
+                        ", gioiTinh='" + gioiTinh + '\'' +
+                        ", soCMND=" + soCMND +
+                        ", soDienThoai='" + soDienThoai + '\'' +
+                        ", eMail='" + eMail + '\'';
+    }
+
+    public String getInfoToCSV() {
+        return this.getHoVaTen() + COMMA +
+                this.getNgaySinh() + COMMA +
+                this.getGioiTinh() + COMMA +
+                this.getSoCMND() + COMMA +
+                this.getSoDienThoai() + COMMA +
+                this.geteMail();
     }
 }

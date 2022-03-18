@@ -1,8 +1,10 @@
 package case_study.ung_dung_quan_ly_khu_nghi_duong_furama.model;
 
-public class Villa extends Facility{
+public class Villa extends Facility {
     private String tieuChuanPhong;
+
     private double dienTichHoBoi;
+
     private int soTang;
 
     public Villa() {
@@ -46,5 +48,12 @@ public class Villa extends Facility{
                 ", dienTichHoBoi=" + dienTichHoBoi +
                 ", soTang=" + soTang +
                 '}';
+    }
+
+    public String getInfoToCSV() {
+        return super.getInfoToCSV() + COMMA +
+                this.getTieuChuanPhong() + COMMA +
+                this.getTieuChuanPhong() + COMMA +
+                this.getSoTang();
     }
 }

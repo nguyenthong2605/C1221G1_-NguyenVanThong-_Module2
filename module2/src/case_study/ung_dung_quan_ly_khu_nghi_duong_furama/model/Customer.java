@@ -47,4 +47,10 @@ public class Customer extends Person{
                 ", diaChi='" + diaChi + '\'' +
                 '}';
     }
+    public String getInfoToCSV(){
+        return super.getInfoToCSV()+COMMA+
+                this.getMaKhachHang()+COMMA+
+                this.getLoaiKhach()+COMMA+
+                this.getDiaChi();
+    }
 }
