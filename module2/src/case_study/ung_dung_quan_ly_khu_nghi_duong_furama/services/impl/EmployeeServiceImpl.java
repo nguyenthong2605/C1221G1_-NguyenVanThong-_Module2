@@ -16,6 +16,10 @@ public class EmployeeServiceImpl implements EmployeeService {
         employeeArrayList.add(new Employee("huỳnh thị út quyên", "7", "nữ", "654321", "0367692847", "utquyen71000@gmail.com", "456", "cao đẳng", "lễ tân", "1000"));
     }
 
+//    String[] danhSachTrinhDo = {"Trung cấp", "Cao đằng", "Đại học", "Sau đại học"};
+//    String[] danhSachViTri = {"Lễ tân", "Phục vụ", "Chuyên viên", "Giám sát", "Quản lý", "Giám đốc"};
+
+
     static {
         employeeArrayList = ReadAndWrite.readEmployeeListFromCSV();
     }
