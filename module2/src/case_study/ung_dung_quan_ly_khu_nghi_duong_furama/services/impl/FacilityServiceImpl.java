@@ -44,9 +44,28 @@ public class FacilityServiceImpl implements FacilityService {
 
     @Override
     public void disPlay() {
+        int index = 0;
         for (Map.Entry<Facility, Integer> facility : facilityIntegerMap.entrySet()) {
-            System.out.println("Dịch vụ: " + facility.getKey() + " Số lần thuê: " + facility.getValue());
+            if (facility.getKey() instanceof Villa) {
+                System.out.println("Danh sách Villa là: ");
+                System.out.println((index++) + " " + facility.getKey() + " Số lần thuê: " + facility.getValue());
+            }
         }
+        index = 0;
+        for (Map.Entry<Facility, Integer> facility : facilityIntegerMap.entrySet()) {
+            if (facility.getKey() instanceof House) {
+                System.out.println("Danh sách House là: ");
+                System.out.println((index++) + " " + facility.getKey() + " Số lần thuê: " + facility.getValue());
+            }
+        }
+        index = 0;
+        for (Map.Entry<Facility, Integer> facility : facilityIntegerMap.entrySet()) {
+            if (facility.getKey() instanceof Room) {
+                System.out.println("Danh sách Room là: ");
+                System.out.println((index++) + " " + facility.getKey() + " Số lần thuê: " + facility.getValue());
+            }
+        }
+
 
     }
 

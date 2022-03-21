@@ -78,7 +78,7 @@ public class EmployeeServiceImpl implements EmployeeService {
         luong = scanner.nextLine();
         Employee employee = new Employee(hoVaTen, ngaySinh, gioiTinh, soCMND, soDienThoai, eMail, maNhanVien, trinhDo, viTri, luong);
         employeeArrayList.add(employee);
-        ReadAndWrite.writeEmployeeListFromCSV(employeeArrayList,false);
+        ReadAndWrite.writeEmployeeListFromCSV(employeeArrayList, false);
     }
 
     @Override
@@ -150,7 +150,7 @@ public class EmployeeServiceImpl implements EmployeeService {
                 } else {
                     employeeArrayList.get(i).setLuong(luong);
                 }
-                ReadAndWrite.writeEmployeeListFromCSV(employeeArrayList,false);
+                ReadAndWrite.writeEmployeeListFromCSV(employeeArrayList, false);
             }
         }
     }
